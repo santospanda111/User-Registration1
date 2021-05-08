@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.regex.*;
 public class UserRegistration {
     private boolean check;
-    private String firstName,lastName,email;
+    private String firstName,lastName,email,phoneNumber;
     private static final Scanner SCANNER  = new Scanner(System.in);
 /**
  * This checkFirstname method will check the user input according to the pattern.
@@ -53,10 +53,27 @@ public class UserRegistration {
         }
     }
 
+    /**
+     * This checkPhonenumber method will check the user input(Mobile Number) according to the pattern.
+     */
+    public void checkPhoneNumber() {
+        System.out.println("Enter Your Mobile Number (Eg. 91 9919819801) : ");
+        phoneNumber = SCANNER.nextLine();
+        check = Pattern.compile("^[0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
+        if (!check) {
+            System.out.println(" Number is invalid!!Please Enter a Valid one. ");
+            checkPhoneNumber();
+        }
+        else {
+            System.out.println("Valid Number ");
+        }
+    }
+
     public static void main(String[]args) {
         UserRegistration user = new UserRegistration();
         user.checkFirstName();
         user.checkLastName();
         user.checkEmail();
+        user.checkPhoneNumber();
     }
 }
