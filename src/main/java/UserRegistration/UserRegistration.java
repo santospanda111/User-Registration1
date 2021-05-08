@@ -77,7 +77,7 @@ public class UserRegistration {
         System.out.println("Enter Password(min 8 characters): ");
         System.out.println("*Have a Special Character(Eg-@$^)");
         password = SCANNER.nextLine();
-        check = Pattern.compile("\"^(?=.*[A-Z])(?=.*[a-z]){8,}.*$\"").matcher(password).matches();
+        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]){8,}.*$").matcher(password).matches();
         if (!check) {
             System.out.println(" Invalid Password!! Enter a valid one. ");
             checkPassword();
