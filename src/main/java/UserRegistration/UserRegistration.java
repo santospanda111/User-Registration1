@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.regex.*;
 public class UserRegistration {
     private boolean check;
-    private String firstName,lastName,email,phoneNumber;
+    private String firstName,lastName,email,phoneNumber,password;
     private static final Scanner SCANNER  = new Scanner(System.in);
 /**
  * This checkFirstname method will check the user input according to the pattern.
@@ -69,11 +69,28 @@ public class UserRegistration {
         }
     }
 
+    /**
+     * Password must be of 8 characters.
+     */
+    public void checkPassword() {
+        System.out.println("Enter Password(8 to 10 character): ");
+        password = SCANNER.nextLine();
+        check = Pattern.compile("^[a-z]{8,}$").matcher(password).matches();
+        if (!check) {
+            System.out.println(" Invalid Password!! Enter a valid one. ");
+            checkPassword();
+        }
+        else {
+            System.out.println(" Password is valid ");
+        }
+    }
+
     public static void main(String[]args) {
         UserRegistration user = new UserRegistration();
         user.checkFirstName();
         user.checkLastName();
         user.checkEmail();
         user.checkPhoneNumber();
+        user.checkPassword();
     }
 }
