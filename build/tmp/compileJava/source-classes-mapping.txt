@@ -1,2 +1,6 @@
+UserRegistration/UserRegistrationException.java
+ UserRegistration.UserRegistrationException
+UserRegistration/IllegalArgumentException.java
+ UserRegistration.IllegalArgumentException
 UserRegistration/UserRegistration.java
  UserRegistration.UserRegistration
