@@ -8,6 +8,7 @@ public class UserRegistration {
     /**
      * This checkFirstname method will check the user input according to the pattern.
      * for this operation i have imported regex module.
+     * added custom exceptions.
      */
     public static boolean checkFirstName(String firstName) throws UserRegistrationException {
         check = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(firstName).matches();
@@ -54,7 +55,7 @@ public class UserRegistration {
         /**
          * Password must be of 8 characters.
          * Have one Uppercase Letter.
-         * Have a Special Character(Eg-@$^)"
+         * Have a Special Character"
          * Must Have a Number.
          */
         public static boolean checkPassword (String password) throws UserRegistrationException{
