@@ -1,0 +1,4 @@
+UserRegistration/UserRegistrationTest.java
+ UserRegistration.UserRegistrationTest
+UserRegistration/UserRegistrationPrameterizedTest.java
+ UserRegistration.UserRegistrationPrameterizedTest
