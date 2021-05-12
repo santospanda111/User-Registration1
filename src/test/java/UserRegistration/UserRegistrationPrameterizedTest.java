@@ -8,6 +8,10 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
+/**
+ * added an annotation @Runwith which takes class as argument.
+ * added variables email and expectedResult.
+ */
 @RunWith(Parameterized.class)
 public class UserRegistrationPrameterizedTest {
     public String email;
@@ -18,10 +22,19 @@ public class UserRegistrationPrameterizedTest {
         this.email=email;
         this.expectedResult=expectedResult;
     }
+
+    /**
+     * This @before annotation will execute before each test runs.
+     */
     @Before
     public void initiallize(){
         userRegistration=new UserRegistration();
     }
+
+    /**
+     * this took a collection to run multiple test cases.
+     * @return
+     */
     @Parameterized.Parameters
     public static Collection input(){
         return Arrays.asList(new Object[][]{
