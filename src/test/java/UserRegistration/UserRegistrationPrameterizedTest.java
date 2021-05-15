@@ -49,7 +49,7 @@ public class UserRegistrationPrameterizedTest {
                 {"abc+100@gmail.com",true}});
     }
     @Test
-    public void givenEmail_WhenProper_ShouldReturnTrueParameterisedTest(){
+    public void givenEmail_WhenProper_ShouldReturnTrueParameterisedTest() throws IllegalArgumentException {
         System.out.println("This is Expected Result "+ this.expectedResult);
         Assertions.assertEquals(this.expectedResult,userRegistration.checkEmail(this.email));
     }
